@@ -1,0 +1,26 @@
+.Button {
+  border: none;
+  background-color: white;
+  color: #59171F;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Lexend Deca', sans-serif;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.Button:disabled {
+  opacity: .5;
+}
+.Button:not(:disabled):hover {
+  opacity: .8;
+}
+.green {
+  background-color: #365E7D;
+  color: white;
+}
+.red {
+  background-color: rgb(44, 24, 13);
+  color: white;
+}

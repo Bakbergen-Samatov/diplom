@@ -1,0 +1,34 @@
+.Sushi {
+  width: 40px;
+  height: 50px;
+  box-sizing: border-box;
+  margin-top: -20px;
+
+  background-repeat: no-repeat;
+}
+.avocadoMaki {
+  background-image: url(../../../../assets/avocadoMaki.svg);
+}
+.avocadoTunaRoll {
+  background-image: url(../../../../assets/avocadoTunaRoll.svg);
+}
+.californiaMaki {
+  background-image: url(../../../../assets/californiaMaki.svg);
+}
+.californiaTunaRoll {
+  background-image: url(../../../../assets/californiaTunaRoll.svg);
+}
+.ikuraMaki {
+  background-image: url(../../../../assets/ikuraMaki.svg);
+}
+.salmonMaki {
+  background-image: url(../../../../assets/salmonMaki.svg);
+}
+
+@media (min-width: 900px) {
+  .Sushi {
+    width: 50px;
+    height: 62px;
+    margin-top: -24px;
+  }
+}

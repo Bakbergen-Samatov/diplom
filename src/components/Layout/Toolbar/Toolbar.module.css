@@ -1,0 +1,15 @@
+.Toolbar {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courgette', cursive;
+  background-color: #8F3132;
+}
+
+.Toolbar nav {
+  display: none;
+}
+@media (min-width: 500px) {
+  .Toolbar nav {
+    display: block;
+  }
+}

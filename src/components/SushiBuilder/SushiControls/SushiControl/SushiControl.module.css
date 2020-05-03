@@ -1,0 +1,32 @@
+.SushiControl {
+  display: flex;
+  align-items: center;
+}
+.SushiControl .label {
+  color: white;
+  font-family: 'Sevillana', cursive;
+  font-size: 1.5rem;
+  padding: .4rem 1rem;
+}
+.SushiControl button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.SushiControl button:disabled {
+  opacity: .5;
+}
+.SushiControl button:not(:disabled):hover {
+  opacity: .8;
+}
+
+@media (min-width: 500px) {
+  .SushiControl .label {
+    font-size: 2rem;
+  }
+}

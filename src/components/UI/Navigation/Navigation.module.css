@@ -1,0 +1,15 @@
+.Navigation {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 0;
+  font-family: 'Courgette', cursive;
+}
+
+@media (min-width: 500px) {
+  .Navigation {
+    margin: 0 12px;
+    flex-direction: row;
+  }
+}

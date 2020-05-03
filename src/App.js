@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import Layout from './containers/Layout/Layout';
+import SushiBuilder from './containers/SushiBuilder/SushiBuilder';
 
-function App() {
+export default () => {
   return (
     <div className="App">
-     Diplom by Samatov Bakbergen
+      <Layout>
+        <SushiBuilder />
+      </Layout>
     </div>
   );
-}
-
-export default App;
+};
