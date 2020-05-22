@@ -114,7 +114,7 @@ export default withErrorHandler(() => {
 
   return (
     <div className={classes.SushiBuilder}>
-      <h1>CakeBuilder</h1>
+      <h1>CakeBuilder </h1>
       {output}
       <Modal show={isOrdering} hideCallback={cancelOrder}>
         {orderSummary}
