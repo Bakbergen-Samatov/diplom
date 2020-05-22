@@ -18,11 +18,10 @@ const PRICES = {
 };
 
 export default withErrorHandler(() => {
-  const [ingredients, setIngredients] = useState(null);
-  const [price, setPrice] = useState(100);
+  const { ingredients, price } = useSelector((state) => state);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   function checkCanOrder(ingredients) {
     const total = Object.keys(ingredients).reduce((total, ingredient) => {
@@ -40,55 +39,50 @@ export default withErrorHandler(() => {
   }
 
   function finishOrder() {
-    const order = {
-      ingredients: ingredients,
-      price: price,
-      delivery: "Fast",
-      customer: {
-        name: "Bakyt",
-        phone: "0700700700",
-        address: {
-          street: "123 Gebze",
-          city: "Karakol",
-        },
-      },
-    };
+    const queryParams = Object.keys(ingredients).map(
+      (ingredient) =>
+        encodeURIComponent(ingredient) +
+        "=" +
+        encodeURIComponent(ingredients[ingredient])
+    );
+    queryParams.push("price=" + encodeURIComponent(price.toFixed(2)));
 
-    setLoading(true);
-    axios.post("/orders.json", order).then((response) => {
-      setLoading(false);
-      setIsOrdering(false);
+    history.push({
+      pathname: "/checkout",
+      search: queryParams.join("&"),
     });
   }
 
   function addIngredient(type) {
     const newIngredients = { ...ingredients };
     newIngredients[type]++;
-    setIngredients(newIngredients);
+    //setIngredients(newIngredients);
     checkCanOrder(newIngredients);
 
-    const newPrice = price + PRICES[type];
-    setPrice(newPrice);
+    //const newPrice = price + PRICES[type];
+    //setPrice(newPrice);
   }
 
   function removeIngredient(type) {
     if (ingredients[type] >= 1) {
       const newIngredients = { ...ingredients };
       newIngredients[type]--;
-      setIngredients(newIngredients);
+      //setIngredients(newIngredients);
       checkCanOrder(newIngredients);
 
-      const newPrice = price - PRICES[type];
-      setPrice(newPrice);
+      //const newPrice = price - PRICES[type];
+      //setPrice(newPrice);
     }
   }
 
+  /*
   useEffect(() => {
     axios
       .get("/ingredients.json")
       .then((response) => setIngredients(response.data))
       .catch((error) => {});
   }, []);
+  */
 
   let output = <Spinner />;
   if (ingredients) {
@@ -107,7 +101,7 @@ export default withErrorHandler(() => {
   }
 
   let orderSummary = <Spinner />;
-  if (isOrdering && !loading) {
+  if (isOrdering) {
     orderSummary = (
       <OrderSummary
         ingredients={ingredients}
@@ -119,7 +113,8 @@ export default withErrorHandler(() => {
   }
 
   return (
-    <div className={classes.CakeBuilder}>
+    <div className={classes.SushiBuilder}>
+      <h1>CakeBuilder</h1>
       {output}
       <Modal show={isOrdering} hideCallback={cancelOrder}>
         {orderSummary}
