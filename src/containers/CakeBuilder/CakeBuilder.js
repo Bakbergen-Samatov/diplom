@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import CakeKit from "../../components/CakeBuilder/CakeKit/CakeKit";
 import classes from "./CakeBuilder.module.css";
 import CakeControls from "../../components/CakeBuilder/CakeControls/CakeControls";
@@ -7,15 +8,8 @@ import OrderSummary from "../../components/CakeBuilder/OrderSummary/OrderSummary
 import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+import { useSelector } from "react-redux";
 
-const PRICES = {
-  redVelvet: 6,
-  BostonCream: 10,
-  Mocha: 8,
-  KeyLime: 11,
-  ChecolateWhite: 15,
-  LemonDrop: 12.,
-};
 
 export default withErrorHandler(() => {
   const { ingredients, price } = useSelector((state) => state);
