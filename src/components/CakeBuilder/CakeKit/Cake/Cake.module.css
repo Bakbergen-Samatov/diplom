@@ -1,0 +1,40 @@
+.Cake {
+  width: 400px;
+  height: 500px;
+  box-sizing: border-box;
+  margin-top: -20px;
+
+  background-repeat: no-repeat;
+}
+.redVelvet {
+  background-image: url(../../../../assets/baha.png);
+  background-size: 40px;
+}
+.bostonCream {
+  background-image: url(../../../../assets/blek.png);
+  background-size: 50px;
+}
+.mocha {
+  background-image: url(../../../../assets/cake.png);
+  background-size: 70px;
+}
+.keyLime {
+  background-image: url(../../../../assets/ret.png);
+  background-size: 50px;
+}
+.checolateWhite {
+  background-image: url(../../../../assets/www.png);
+  background-size: 50px;
+}
+.lemonDrop {
+  background-image: url(../../../../assets/eee.jpg);
+  background-size: 50px;
+}
+
+@media (min-width: 900px) {
+  .Cake {
+    width: 50px;
+    height: 62px;
+    margin-top: -24px;
+  }
+}
