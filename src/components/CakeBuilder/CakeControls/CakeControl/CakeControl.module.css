@@ -4,7 +4,7 @@
 }
 .CakeControl .label {
   color: white;
-  font-family: 'Sevillana', cursive;
+  font-family: 'Nanum Brush Script', cursive;
   font-size: 1.5rem;
   padding: .4rem 1rem;
 }
@@ -13,7 +13,7 @@
   height: 30px;
   border: none;
   background-color: white;
-  color: black;
+  color: #EC6F31;
   font-weight: bold;
   border-radius: 100%;
   cursor: pointer;
