@@ -7,7 +7,7 @@ export default ({ control, removeIngredient, addIngredient, disabled }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={classes.SushiControl}>
+    <div className={classes.CakeControl}>
       <button
         className={classes.less}
         onClick={() =>
